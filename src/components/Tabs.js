@@ -2,7 +2,7 @@ const Tabs = ({ companies }) => {
   return (
     <header>
       {companies.map((company, index) => {
-        <button key={index}>{company}</button>;
+        return <button key={index}>{company}</button>;
       })}
     </header>
   );

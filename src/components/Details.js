@@ -7,9 +7,9 @@ const Details = ({ company }) => {
       <h4>{company.company}</h4>
       <p>{company.dates}</p>
       <div className="duties">
-        {company.duties.map((duty) => {
+        {company.duties.map((duty, index) => {
           return (
-            <div>
+            <div key={index}>
               <FaAngleDoubleRight />
               <p>{duty}</p>
             </div>

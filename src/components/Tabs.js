@@ -1,6 +1,6 @@
 const Tabs = (props) => {
   return (
-    <header>
+    <header className="header">
       {props.companies.map((company, index) => {
         return (
           <button key={index} onClick={() => props.changeDetails(company)}>

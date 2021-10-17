@@ -17,7 +17,7 @@ function App() {
 
   return (
     <main>
-      <h1>Our Experience</h1>
+      <h1 className="heading">Experience</h1>
       <div className="underline"></div>
       {companies.length === 0 ? (
         <Loading />

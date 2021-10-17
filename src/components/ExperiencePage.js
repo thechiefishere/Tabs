@@ -14,7 +14,7 @@ const ExperiencePage = ({ companies }) => {
   };
 
   return (
-    <section>
+    <section className="companies">
       <Tabs companies={allCompanies} changeDetails={changeDetails} />
       <Details company={show} />
     </section>

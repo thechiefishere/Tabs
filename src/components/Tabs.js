@@ -1,8 +1,12 @@
-const Tabs = ({ companies }) => {
+const Tabs = (props) => {
   return (
     <header>
-      {companies.map((company, index) => {
-        return <button key={index}>{company}</button>;
+      {props.companies.map((company, index) => {
+        return (
+          <button key={index} onClick={() => props.changeDetails(company)}>
+            {company}
+          </button>
+        );
       })}
     </header>
   );

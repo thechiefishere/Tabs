@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Loading from "./components/Loading";
+import Experience from "./components/ExperiencePage";
 
 function App() {
+  const [companies, setCompanies] = useState([]);
+  useEffect(() => {
+    async () => {
+      try {
+        const response = await fetch(
+          "https://course-api.com/react-tabs-project"
+        );
+        const data = await response.json();
+        setCompanies(data);
+      } catch (err) {
+        console.log(error);
+      }
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <h1>Our Experience</h1>
+      <div className="underline"></div>
+      {companies.length === 0 ? (
+        <Loading />
+      ) : (
+        <Experience companies={companies} />
+      )}
+    </main>
   );
 }
 
